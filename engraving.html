@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<head>
+    <title>Calc Ark</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/Css/style.css">
+</head>
+<body>
+    <div class="container">
+    <header>
+        <h3>Calc Ark</h3>
+        <div class="nav_bar">
+            <a href="index.html">Strona główna</a>
+            
+            <div class="dropdown_calc">
+                <button class="dropbtn_calc active" id="dropbtn_calc">
+                    Arkusze kalkulacyjne<i class="bi bi-caret-down-fill"></i>
+                </button>
+                <div class="dropdown_calc-content">
+                    <a href="Engraving.html" class="active">Kalkulator Engravingów</a>
+                    <a href="Marishop.html">Kalkulator Cen w Mari Shopie</a>
+                    <a href="dmg_buff.html">Kalkulator Dmg buff</a>
+                    <a href="heals.html">Kalkulator Leczenia</a>
+                    <a href="cd.html">Kalkulator Czasów Odnowienia</a>
+                </div>
+            </div>
+
+            <div class="dropdown_calc">
+                <button class="dropbtn_calc" id="dropbtn_calc">
+                    Poradniki do klas<i class="bi bi-caret-down-fill"></i>
+                </button>
+                <div class="dropdown_calc-content">
+                    <a href="bard_guide.html">Bard</a>
+                    <a href="paladyn_guide.html">Paladyn</a>
+                </div>
+            </div>
+
+            <a href="Valtan_inferno.html">Valtan Inferno</a>
+
+        </div> <hr>
+    </header>
+   
+
+<main>
+<div class="main-page">
+    <div class="engr-left">
+        <img src="./Img/relic-stone-guide.PNG" alt="Poradnik do Relic stone">
+    </div>
+    <div class="engr-right">
+        <table class="engraving-table">
+            <thead>
+                <tr>
+                    <td>Nazwa Engravingu</td>
+                    <td>Książka</td>
+                    <td>Naszyjnik</td>
+                    <td>Kolczyk 1</td>
+                    <td>Kolczyk 2</td>
+                    <td>Pierścień 1</td>                                
+                    <td>Pierścień 2</td>   
+                    <td>Kamień</td>
+                    <td>Lvl</td>                         
+                </tr>
+            </thead>
+            <tbody class="tbody-engr">
+                <tr>
+                    <td class="engr-name"> 
+                        <input type="text" placeholder="Nazwa Engravingu">
+                    </td>
+                    <td>
+                        <input type="text" id="engr1-book" class="engr1" onblur="findTotal()" onmouseenter="changecolor()" onclick="changecolor()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr1-neck" class="engr1" onblur="findTotal()" onmouseenter="changecolor()" onclick="changecolor()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr1-ear1" class="engr1" onblur="findTotal()" onmouseenter="changecolor()" onclick="changecolor()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr1-ear2" class="engr1" onblur="findTotal()" onmouseenter="changecolor()" onclick="changecolor()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr1-ring1" class="engr1" onblur="findTotal()" onmouseenter="changecolor()" onclick="changecolor()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr1-ring2" class="engr1" onblur="findTotal()" onmouseenter="changecolor()" onclick="changecolor()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr1-stone" class="engr1" onblur="findTotal()" onmouseenter="changecolor()" onclick="changecolor()">
+                    </td>
+                    <td class="engr-lvl">
+                        <input type="text" id="engr1-lvl" value="0" onmouseenter="changecolor()">
+                    </td> 
+                </tr>
+                <tr>
+                    <td class="engr-name"> 
+                        <input type="text" placeholder="Nazwa Engravingu">
+                    </td>
+                    <td>
+                        <input type="text" id="engr2-book" class="engr2" onblur="findTotal1()" onmouseenter="changecolor1()" onclick="changecolor1()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr2-neck" class="engr2" onblur="findTotal1()" onmouseenter="changecolor1()" onclick="changecolor1()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr2-ear1" class="engr2" onblur="findTotal1()" onmouseenter="changecolor1()" onclick="changecolor1()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr2-ear2" class="engr2" onblur="findTotal1()" onmouseenter="changecolor1()" onclick="changecolor1()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr2-ring1" class="engr2" onblur="findTotal1()" onmouseenter="changecolor1()" onclick="changecolor1()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr2-ring2" class="engr2" onblur="findTotal1()" onmouseenter="changecolor1()" onclick="changecolor1()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr2-stone" class="engr2" onblur="findTotal1()" onmouseenter="changecolor1()" onclick="changecolor1()">
+                    </td>
+                    <td class="engr-lvl">
+                        <input type="text" id="engr2-lvl" value="0" onmouseenter="changecolor1()">
+                    </td> 
+                </tr>
+                <tr>
+                    <td class="engr-name"> 
+                        <input type="text" placeholder="Nazwa Engravingu">
+                    </td>
+                    <td>
+                        <input type="text" id="engr3-book" class="engr3" onblur="findTotal2()" onmouseenter="changecolor2()" onclick="changecolor2()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr3-neck" class="engr3" onblur="findTotal2()" onmouseenter="changecolor2()" onclick="changecolor2()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr3-ear1" class="engr3" onblur="findTotal2()" onmouseenter="changecolor2()" onclick="changecolor2()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr3-ear2" class="engr3" onblur="findTotal2()" onmouseenter="changecolor2()" onclick="changecolor2()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr3-ring1" class="engr3" onblur="findTotal2()" onmouseenter="changecolor2()" onclick="changecolor2()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr3-ring2" class="engr3" onblur="findTotal2()" onmouseenter="changecolor2()" onclick="changecolor2()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr3-stone" class="engr3" onblur="findTotal2()" onmouseenter="changecolor2()" onclick="changecolor2()">
+                    </td>
+                    <td class="engr-lvl">
+                        <input type="text" id="engr3-lvl" value="0" onmouseenter="changecolor2()">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="engr-name"> 
+                        <input type="text" placeholder="Nazwa Engravingu">
+                    </td>
+                    <td>
+                        <input type="text" id="engr4-book" class="engr4" onblur="findTotal3()" onmouseenter="changecolor3()" onclick="changecolor3()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr4-neck" class="engr4" onblur="findTotal3()" onmouseenter="changecolor3()" onclick="changecolor3()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr4-ear1" class="engr4" onblur="findTotal3()" onmouseenter="changecolor3()" onclick="changecolor3()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr4-ear2" class="engr4" onblur="findTotal3()" onmouseenter="changecolor3()" onclick="changecolor3()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr4-ring1" class="engr4" onblur="findTotal3()" onmouseenter="changecolor3()" onclick="changecolor3()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr4-ring2" class="engr4" onblur="findTotal3()" onmouseenter="changecolor3()" onclick="changecolor3()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr4-stone" class="engr4" onblur="findTotal3()" onmouseenter="changecolor3()" onclick="changecolor3()">
+                    </td>
+                    <td class="engr-lvl">
+                        <input type="text" id="engr4-lvl" value="0" onmouseenter="changecolor3()">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="engr-name"> 
+                        <input type="text" placeholder="Nazwa Engravingu">
+                    </td>
+                    <td>
+                        <input type="text" id="engr1-book" class="engr1" onblur="findTotal4()" onmouseenter="changecolor4()" onclick="changecolor4()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr5-neck" class="engr5" onblur="findTotal4()" onmouseenter="changecolor4()" onclick="changecolor4()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr5-ear1" class="engr5" onblur="findTotal4()" onmouseenter="changecolor4()" onclick="changecolor4()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr5-ear2" class="engr5" onblur="findTotal4()" onmouseenter="changecolor4()" onclick="changecolor4()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr5-ring1" class="engr5" onblur="findTotal4()" onmouseenter="changecolor4()" onclick="changecolor4()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr5-ring2" class="engr5" onblur="findTotal4()" onmouseenter="changecolor4()" onclick="changecolor4()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr5-stone" class="engr5" onblur="findTotal4()" onmouseenter="changecolor4()" onclick="changecolor4()">
+                    </td>
+                    <td class="engr-lvl">
+                        <input type="text" id="engr5-lvl" value="0" onmouseenter="changecolor4()">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="engr-name"> 
+                        <input type="text" placeholder="Nazwa Engravingu">
+                    </td>
+                    <td>
+                        <input type="text" id="engr6-book" class="engr6" onblur="findTotal5()" onmouseenter="changecolor5()" onclick="changecolor5()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr6-neck" class="engr6" onblur="findTotal5()" onmouseenter="changecolor5()" onclick="changecolor5()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr6-ear1" class="engr6" onblur="findTotal5()" onmouseenter="changecolor5()" onclick="changecolor5()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr6-ear2" class="engr6" onblur="findTotal5()" onmouseenter="changecolor5()" onclick="changecolor5()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr6-ring1" class="engr6" onblur="findTotal5()" onmouseenter="changecolor5()" onclick="changecolor5()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr6-ring2" class="engr6" onblur="findTotal5()" onmouseenter="changecolor5()" onclick="changecolor5()">
+                    </td>
+                    <td>
+                        <input type="text" id="engr6-stone" class="engr6" onblur="findTotal5()" onmouseenter="changecolor5()" onclick="changecolor5()">
+                    </td>
+                    <td class="engr-lvl">
+                        <input type="text" id="engr6-lvl" value="0" onmouseenter="changecolor5()">
+                    </td>
+                </tr>
+                <tr class="negative_engr first-negative-engr">
+                    <td class="engr-name"> Move S. Redu.</td>
+                    <td>
+                        <input type="text" id="msr-book" value="0" disabled  onmouseenter="changecolor6()" >
+                    </td>
+                    <td>
+                        <input type="text" id="msr-neck" class="msr" onblur="findTotal6()" onmouseenter="changecolor6()" onclick="changecolor6()">
+                    </td>
+                    <td>
+                        <input type="text" id="msr-ear1" class="msr" onblur="findTotal6()" onmouseenter="changecolor6()" onclick="changecolor6()">
+                    </td>
+                    <td>
+                        <input type="text" id="msr-ear2" class="msr" onblur="findTotal6()" onmouseenter="changecolor6()" onclick="changecolor6()">
+                    </td>
+                    <td>
+                        <input type="text" id="msr-ring1" class="msr" onblur="findTotal6()" onmouseenter="changecolor6()" onclick="changecolor6()">
+                    </td>
+                    <td>
+                        <input type="text" id="msr-ring2" class="msr" onblur="findTotal6()" onmouseenter="changecolor6()" onclick="changecolor6()">
+                    </td>
+                    <td>
+                        <input type="text" id="msr-stone" class="msr" onblur="findTotal6()" onmouseenter="changecolor6()" onclick="changecolor6()">
+                    </td>
+                    <td class="engr-lvl">
+                        <input type="text" id="msr-lvl" value="0" onmouseenter="changecolor6()">
+                    </td>
+                </tr>
+                <tr class="negative_engr">
+                    <td class="engr-name"> Att. Speed Redu.</td>
+                    <td>
+                        <input type="text" id="asr-book" value="0" disabled  onmouseenter="changecolor7()" >
+                    </td>
+                    <td>
+                        <input type="text" id="asr-neck" class="asr" onblur="findTotal7()" onmouseenter="changecolor7()" onclick="changecolor7()">
+                    </td>
+                    <td>
+                        <input type="text" id="asr-ear1" class="asr" onblur="findTotal7()" onmouseenter="changecolor7()" onclick="changecolor7()">
+                    </td>
+                    <td>
+                        <input type="text" id="asr-ear2" class="asr" onblur="findTotal7()" onmouseenter="changecolor7()" onclick="changecolor7()">
+                    </td>
+                    <td>
+                        <input type="text" id="asr-ring1" class="asr" onblur="findTotal7()" onmouseenter="changecolor7()" onclick="changecolor7()">
+                    </td>
+                    <td>
+                        <input type="text" id="asr-ring2" class="asr" onblur="findTotal7()" onmouseenter="changecolor7()" onclick="changecolor7()">
+                    </td>
+                    <td>
+                        <input type="text" id="asr-stone" class="asr" onblur="findTotal7()" onmouseenter="changecolor7()" onclick="changecolor7()">
+                    </td>
+                    <td class="engr-lvl">
+                        <input type="text" id="asr-lvl" value="0" onmouseenter="changecolor7()">
+                    </td>
+                </tr>
+                <tr class="negative_engr">
+                    <td class="engr-name"> Defense Redu.</td>
+                    <td>
+                        <input type="text" id="dr-book" value="0" disabled  onmouseenter="changecolor8()" >
+                    </td>
+                    <td>
+                        <input type="text" id="dr-neck" class="dr" onblur="findTotal8()" onmouseenter="changecolor8()" onclick="changecolor8()">
+                    </td>
+                    <td>
+                        <input type="text" id="dr-ear1" class="dr" onblur="findTotal8()" onmouseenter="changecolor8()" onclick="changecolor8()">
+                    </td>
+                    <td>
+                        <input type="text" id="dr-ear2" class="dr" onblur="findTotal8()" onmouseenter="changecolor8()" onclick="changecolor8()">
+                    </td>
+                    <td>
+                        <input type="text" id="dr-ring1" class="dr" onblur="findTotal8()" onmouseenter="changecolor8()" onclick="changecolor8()">
+                    </td>
+                    <td>
+                        <input type="text" id="dr-ring2" class="dr" onblur="findTotal8()" onmouseenter="changecolor8()" onclick="changecolor8()">
+                    </td>
+                    <td>
+                        <input type="text" id="dr-stone" class="dr" onblur="findTotal8()" onmouseenter="changecolor8()" onclick="changecolor8()">
+                    </td>
+                    <td class="engr-lvl">
+                        <input type="text" id="dr-lvl" value="0" onmouseenter="changecolor8()">
+                    </td>
+                </tr>
+                <tr class="negative_engr last-negative-engr">
+                    <td class="engr-name"> Att.Power Redu.</td>
+                    <td>
+                        <input type="text" id="apr-book" value="0" disabled  onmouseenter="changecolor9()" >
+                    </td>
+                    <td>
+                        <input type="text" id="apr-neck" class="apr" onblur="findTotal9()" onmouseenter="changecolor9()" onclick="changecolor9()">
+                    </td>
+                    <td>
+                        <input type="text" id="apr-ear1" class="apr" onblur="findTotal9()" onmouseenter="changecolor9()" onclick="changecolor9()">
+                    </td>
+                    <td>
+                        <input type="text" id="apr-ear2" class="apr" onblur="findTotal9()" onmouseenter="changecolor9()" onclick="changecolor9()">
+                    </td>
+                    <td>
+                        <input type="text" id="apr-ring1" class="apr" onblur="findTotal9()" onmouseenter="changecolor9()" onclick="changecolor9()">
+                    </td>
+                    <td>
+                        <input type="text" id="apr-ring2" class="apr" onblur="findTotal9()" onmouseenter="changecolor9()" onclick="changecolor9()">
+                    </td>
+                    <td>
+                        <input type="text" id="apr-stone" class="apr" onblur="findTotal9()" onmouseenter="changecolor9()" onclick="changecolor9()">
+                    </td>
+                    <td class="engr-lvl">
+                        <input type="text" id="apr-lvl" value="0" onmouseenter="changecolor9()">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</main>
+
+<footer>
+    <div class="footer">
+        Copyright&copy; 2022 Krescencja
+    </div>
+</footer>
+<script>
+
+function findTotal(){
+    var arr = document.getElementsByClassName('engr1');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseFloat(arr[i].value))
+            tot += parseFloat(arr[i].value);
+    }
+    document.getElementById('engr1-lvl').value = tot;
+}
+
+function findTotal1(){
+    var arr = document.getElementsByClassName('engr2');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseFloat(arr[i].value))
+            tot += parseFloat(arr[i].value);
+    }
+    document.getElementById('engr2-lvl').value = tot;
+}
+
+function findTotal2(){
+    var arr = document.getElementsByClassName('engr3');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseFloat(arr[i].value))
+            tot += parseFloat(arr[i].value);
+    }
+    document.getElementById('engr3-lvl').value = tot;
+}
+
+function findTotal3(){
+    var arr = document.getElementsByClassName('engr4');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseFloat(arr[i].value))
+            tot += parseFloat(arr[i].value);
+    }
+    document.getElementById('engr4-lvl').value = tot;
+}
+
+function findTotal4(){
+    var arr = document.getElementsByClassName('engr5');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseFloat(arr[i].value))
+            tot += parseFloat(arr[i].value);
+    }
+    document.getElementById('engr5-lvl').value = tot;
+}
+
+function findTotal5(){
+    var arr = document.getElementsByClassName('engr6');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseFloat(arr[i].value))
+            tot += parseFloat(arr[i].value);
+    }
+    document.getElementById('engr6-lvl').value = tot;
+}
+
+function findTotal6(){
+    var arr = document.getElementsByClassName('msr');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseFloat(arr[i].value))
+            tot += parseFloat(arr[i].value);
+    }
+    document.getElementById('msr-lvl').value = tot;
+}
+
+function findTotal7(){
+    var arr = document.getElementsByClassName('asr');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseFloat(arr[i].value))
+            tot += parseFloat(arr[i].value);
+    }
+    document.getElementById('asr-lvl').value = tot;
+}
+
+function findTotal8(){
+    var arr = document.getElementsByClassName('dr');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseFloat(arr[i].value))
+            tot += parseFloat(arr[i].value);
+    }
+    document.getElementById('dr-lvl').value = tot;
+}
+
+function findTotal9(){
+    var arr = document.getElementsByClassName('apr');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseFloat(arr[i].value))
+            tot += parseFloat(arr[i].value);
+    }
+    document.getElementById('apr-lvl').value = tot;
+}
+
+function changecolor(){
+    let a = document.getElementById('engr1-lvl').value;
+    if(a<5){
+        document.getElementById('engr1-lvl').style.backgroundColor = '#ea9999';
+    } else if(a<10) {
+        document.getElementById('engr1-lvl').style.backgroundColor = '#f9cb9c';
+    } else if(a<15) {
+        document.getElementById('engr1-lvl').style.backgroundColor = '#ffd966';
+    } else if(a>=15) {
+        document.getElementById('engr1-lvl').style.backgroundColor = '#93c47d';
+    }
+}
+
+function changecolor1(){
+    let a = document.getElementById('engr2-lvl').value;
+    if(a<5){
+        document.getElementById('engr2-lvl').style.backgroundColor = '#ea9999';
+    } else if(a<10) {
+        document.getElementById('engr2-lvl').style.backgroundColor = '#f9cb9c';
+    } else if(a<15) {
+        document.getElementById('engr2-lvl').style.backgroundColor = '#ffd966';
+    } else if(a>=15) {
+        document.getElementById('engr2-lvl').style.backgroundColor = '#93c47d';
+    }
+}
+
+function changecolor2(){
+    let a = document.getElementById('engr3-lvl').value;
+    if(a<5){
+        document.getElementById('engr3-lvl').style.backgroundColor = '#ea9999';
+    } else if(a<10) {
+        document.getElementById('engr3-lvl').style.backgroundColor = '#f9cb9c';
+    } else if(a<15) {
+        document.getElementById('engr3-lvl').style.backgroundColor = '#ffd966';
+    } else if(a>=15) {
+        document.getElementById('engr3-lvl').style.backgroundColor = '#93c47d';
+    }
+}
+
+function changecolor3(){
+    let a = document.getElementById('engr4-lvl').value;
+    if(a<5){
+        document.getElementById('engr4-lvl').style.backgroundColor = '#ea9999';
+    } else if(a<10) {
+        document.getElementById('engr4-lvl').style.backgroundColor = '#f9cb9c';
+    } else if(a<15) {
+        document.getElementById('engr4-lvl').style.backgroundColor = '#ffd966';
+    } else if(a>=15) {
+        document.getElementById('engr4-lvl').style.backgroundColor = '#93c47d';
+    }
+}
+
+function changecolor4(){
+    let a = document.getElementById('engr5-lvl').value;
+    if(a<5){
+        document.getElementById('engr5-lvl').style.backgroundColor = '#ea9999';
+    } else if(a<10) {
+        document.getElementById('engr5-lvl').style.backgroundColor = '#f9cb9c';
+    } else if(a<15) {
+        document.getElementById('engr5-lvl').style.backgroundColor = '#ffd966';
+    } else if(a>=15) {
+        document.getElementById('engr5-lvl').style.backgroundColor = '#93c47d';
+    }
+}
+
+function changecolor5(){
+    let a = document.getElementById('engr6-lvl').value;
+    if(a<5){
+        document.getElementById('engr6-lvl').style.backgroundColor = '#ea9999';
+    } else if(a<10) {
+        document.getElementById('engr6-lvl').style.backgroundColor = '#f9cb9c';
+    } else if(a<15) {
+        document.getElementById('engr6-lvl').style.backgroundColor = '#ffd966';
+    } else if(a>=15) {
+        document.getElementById('engr6-lvl').style.backgroundColor = '#93c47d';
+    }
+}
+
+function changecolor6(){
+    let a = document.getElementById('msr-lvl').value;
+    if(a<5){
+        document.getElementById('msr-lvl').style.backgroundColor = '#ea9999';
+    } else if(a<10) {
+        document.getElementById('msr-lvl').style.backgroundColor = '#f9cb9c';
+    } else if(a<15) {
+        document.getElementById('msr-lvl').style.backgroundColor = '#ffd966';
+    } else if(a>=15) {
+        document.getElementById('msr-lvl').style.backgroundColor = '#93c47d';
+    }
+}
+
+function changecolor7(){
+    let a = document.getElementById('asr-lvl').value;
+    if(a<5){
+        document.getElementById('asr-lvl').style.backgroundColor = '#ea9999';
+    } else if(a<10) {
+        document.getElementById('asr-lvl').style.backgroundColor = '#f9cb9c';
+    } else if(a<15) {
+        document.getElementById('asr-lvl').style.backgroundColor = '#ffd966';
+    } else if(a>=15) {
+        document.getElementById('asr-lvl').style.backgroundColor = '#93c47d';
+    }
+}
+
+function changecolor8(){
+    let a = document.getElementById('dr-lvl').value;
+    if(a<5){
+        document.getElementById('dr-lvl').style.backgroundColor = '#ea9999';
+    } else if(a<10) {
+        document.getElementById('dr-lvl').style.backgroundColor = '#f9cb9c';
+    } else if(a<15) {
+        document.getElementById('dr-lvl').style.backgroundColor = '#ffd966';
+    } else if(a>=15) {
+        document.getElementById('dr-lvl').style.backgroundColor = '#93c47d';
+    }
+}
+
+function changecolor9(){
+    let a = document.getElementById('apr-lvl').value;
+    if(a<5){
+        document.getElementById('apr-lvl').style.backgroundColor = '#ea9999';
+    } else if(a<10) {
+        document.getElementById('apr-lvl').style.backgroundColor = '#f9cb9c';
+    } else if(a<15) {
+        document.getElementById('apr-lvl').style.backgroundColor = '#ffd966';
+    } else if(a>=15) {
+        document.getElementById('apr-lvl').style.backgroundColor = '#93c47d';
+    }
+}
+</script>
+
+</body>
+</html>

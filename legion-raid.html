@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+    <title>Calc Ark</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/Css/style.css">
+    <link rel="stylesheet" href="/Css/style-responsive.css">
+    <script src="/JS/legion-raid.js"></script>
+</head>
+<style>
+    
+#raid-valtan {
+    display: none
+}
+#raid-vykas {
+    display: none 
+}
+#raid-kakul {
+    display: none 
+}
+</style>
+<body>
+
+<div class="hero">
+    <nav class="topnav" id="myTopnav">
+        <a href="index.html"><h2 class="logo"> Calc <span class="logo-color">Ark</span></h2></a>
+        
+            <a href="classes.html">Poradniki do klas</a>
+            <a href="legion-raid.html">Poradniki do Legionów</a>
+            <a href="calc.html">Arkusze Kalkulacyjne</a>
+        
+        <span>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="bi bi-caret-down-fill"></i>
+             </a> 
+        </span>
+    </nav>
+    <main>
+
+        <div class="main-page">
+            <div class="choose-class">
+                <button type="button" name="class" onclick="display_valtan()"> Valtan</button>
+                <button type="button" name="class" onclick="display_vykas()"> Vykas</button>
+                <button type="button" name="class" onclick="display_kakul()"> Kakul</button>
+                
+            </div>
+
+            <div class="raid-card" id="raid-valtan">
+                    <div class="raid-header">
+                        <h2 class="logo"> Val<span class="logo-color">tan:</span></h2>
+                    </div>
+                    <div class="text-raid-main">
+                        <div class="text-raid">
+                            <p>
+                                1Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio voluptas accusamus asperiores a beatae ullam dolorum, earum explicabo debitis modi officia tempore corporis ipsa fugit repellat perferendis quisquam harum recusandae.
+                                Nemo repellat eaque culpa inventore mollitia reprehenderit iusto ipsam. Maiores quos, adipisci totam nam esse voluptates quas cupiditate qui tempora! A soluta quisquam, labore eos distinctio ipsum sit deserunt cupiditate.
+                                Dolores nemo earum doloremque numquam dolorum corporis vitae doloribus id, quidem ea, minima rerum placeat error amet! Deserunt maiores laudantium qui consequatur tempora, corrupti provident voluptatum nam autem adipisci ut!
+                            </p>
+                        </div>
+                        <div class="raid-img">
+                            <img src="./Img/raid/valtan.PNG" alt="valtan">
+                        </div>
+                    </div>
+            </div>
+            
+            <div class="raid-card" id="raid-vykas">
+                <div class="raid-header">
+                    <h2 class="logo"> Vyk<span class="logo-color">as:</span></h2>
+                </div>
+                <div class="text-raid-main">
+                    <div class="text-raid">
+                        <p>
+                            2Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio voluptas accusamus asperiores a beatae ullam dolorum, earum explicabo debitis modi officia tempore corporis ipsa fugit repellat perferendis quisquam harum recusandae.
+                            Nemo repellat eaque culpa inventore mollitia reprehenderit iusto ipsam. Maiores quos, adipisci totam nam esse voluptates quas cupiditate qui tempora! A soluta quisquam, labore eos distinctio ipsum sit deserunt cupiditate.
+                            Dolores nemo earum doloremque numquam dolorum corporis vitae doloribus id, quidem ea, minima rerum placeat error amet! Deserunt maiores laudantium qui consequatur tempora, corrupti provident voluptatum nam autem adipisci ut!
+                        </p>
+                    </div>
+                    <div class="raid-img">
+                        <img src="./Img/raid/valtan.PNG" alt="valtan">
+                    </div>
+                </div>
+            </div>
+
+            <div class="raid-card" id="raid-kakul">
+                <div class="header-card">
+                    <h2 class="logo"> Ka<span class="logo-color">kul:</span></h2>
+                </div>
+                <div class="text-raid-main">
+                    <div class="text-raid">
+                        <p>
+                            3Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio voluptas accusamus asperiores a beatae ullam dolorum, earum explicabo debitis modi officia tempore corporis ipsa fugit repellat perferendis quisquam harum recusandae.
+                            Nemo repellat eaque culpa inventore mollitia reprehenderit iusto ipsam. Maiores quos, adipisci totam nam esse voluptates quas cupiditate qui tempora! A soluta quisquam, labore eos distinctio ipsum sit deserunt cupiditate.
+                            Dolores nemo earum doloremque numquam dolorum corporis vitae doloribus id, quidem ea, minima rerum placeat error amet! Deserunt maiores laudantium qui consequatur tempora, corrupti provident voluptatum nam autem adipisci ut!
+                        </p>
+                    </div>
+                    <div class="raid-img">
+                        <img src="./Img/raid/valtan.PNG" alt="valtan">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+       
+</div>
+<footer>
+    <div class="footer">
+        <div class="contact">
+            <p>Copyright&copy; 2022</p>
+            <p> <i class="bi bi-twitter"></i>/Krescencja</p>
+            <p> <i class="bi bi-twitch"></i>/Krescencja</p>
+            <p><i class="bi bi-discord"></i> Krescencja#1256</p>
+            
+        </div>
+    </div>
+    </footer>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+      
+</body>
+</html>

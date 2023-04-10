@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<head>
+    <title>Calc Ark</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/Css/style.css">
+    <link rel="stylesheet" href="/Css/style-responsive.css">
+    <script src="/JS/bard.js"></script>
+    <script src="/JS/paladin.js"></script>
+</head>
+<style>
+    
+#class-Bard {
+    display: none
+}
+#class-Paladin {
+    display: none 
+}
+.specbard {
+    display: none
+}
+.swifbard {
+    display: none 
+}
+.dpsbard {
+    display: none 
+}
+.specbard_right {
+    display: none
+}
+.swifbard_right {
+    display: none 
+}
+.dpsbard_right {
+    display: none 
+}
+.specbard_footer {
+    display: none
+}
+.swifbard_footer {
+    display: none 
+}
+.dpsbard_footer {
+    display: none 
+}
+.specpaladin {
+    display: none
+}
+.swifpaladin {
+    display: none 
+}
+.dpspaladin {
+    display: none 
+}
+.specpaladin_right {
+    display: none
+}
+.swifpaladin_right {
+    display: none 
+}
+.dpspaladin_right {
+    display: none 
+}
+.specpaladin_footer {
+    display: none
+}
+.swifpaladin_footer {
+    display: none 
+}
+.dpspaladin_footer {
+    display: none 
+}
+
+</style>
+<body>
+
+<div class="hero">
+    <nav class="topnav" id="myTopnav">
+        <a href="index.html"><h2 class="logo"> Calc <span class="logo-color">Ark</span></h2></a>
+        
+            <a href="classes.html">Poradniki do klas</a>
+            <a href="legion-raid.html">Poradniki do Legionów</a>
+            <a href="calc.html">Arkusze Kalkulacyjne</a>
+        
+        <span>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="bi bi-caret-down-fill"></i>
+             </a> 
+        </span>
+    </nav>
+    <main><!-- 2 sekcje lewo|prawo;
+        po lewej: guziki do wybrania skilli (ukryte divy) np. swifnes,spec,dps, pvp1v1, gve, coopy uwzględnić w każdych wszystkie zmienne np. pod specke na valtanie zmienić na 2 contry, na coopy dac harfe etc..
+        po prawej: Engravingi tak samo jak po lewej do wyboru pod swifnes, spec, dps, gvg (ukryte divy)
+        po seperatorze to samo dla paladyna...
+        ustawić na stronie sekcje i na górze strony zrobić "spis treści" 1 bard; 2 paladyn.. -->
+        <div class="main-page">
+            <div class="choose-class">
+                <button type="button" name="class" id="toggle-bard" onclick="display_bard()"> Bard</button>
+                <button type="button" name="class" id="toggle-paladin" onclick="display_paladin()"> Paladin</button>
+                
+            </div>
+
+            <div class="classes-card" id="class-Bard">
+                <div class="header-card">
+                    <h2 class="logo"> Sety dla <span class="logo-color"> Barda:</span></h2>
+                </div>
+
+                <div class="left">
+                    <div class="buttons">
+                        <button type="button" name="spec_bard" id="toggle_bard_spec" onclick="bard_spec()">Specjalizacja</button>
+                        <button type="button" name="swif_bard" id="toggle_bard_swif" onclick="bard_swif()">Swiftness</button>  
+                        <button type="button" name="dps_bard" id="toggle_bard_dps" onclick="bard_dps()">DPS</button>  
+                    </div> 
+                    <div class="specbard" id="specbard">
+                        <div>
+                            <div class="skills">
+                                    <img src="/Img/classes/bard_skills/soundshock.PNG" alt="sound shock">   <span>Sound shock - skill nakładający na bossa debuff +10% zadawanych obrażeń dla grupy.
+                                        <ul>
+                                            <li>3: Maintained Explosion - aby dłużej utrzymać debufa</li>
+                                            <li>1: Sacred Shock - debuff</li>
+                                            <li>1: Rapid Fire - skill używa się podwójnie, używa się go do przedłużenia debuffa</li>
+                                            <li style="text-decoration: underline;">Skill wymagany</li>
+                                        </ul>
+                                    </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune" title="Judgment">
+                                
+                            </div>
+                            <div class="skills">
+                                    <img src="/Img/classes/bard_skills/preludeofstorm.PNG" alt="prelude of storm"> <span>Prelude of Storm - Skill, który kontruje, jednak używa się go co cd do ładowania identity (z)
+                                        <ul>
+                                        <li>2: Quick Prep - skraca cd skilla</li>
+                                        <li>2: Melody Increase - Zwiększa ładowanie identity</li>
+                                        <li>1: Powerful Prelude - używa się do zwiększenia damage</li>
+                                        <li style="text-decoration: underline;">Skill wymagany</li>
+                                    </ul></span>
+                                    <img src="/Img/classes/runes/wealthepic.PNG" alt="" class="rune" title="Epic Wealth">
+                                
+                            </div>
+                            <div class="skills">
+                                    <img src="/Img/classes/bard_skills/sonicvibration.PNG" alt="sonic vibration"> <span>Sonic Vibration - Buff 15% dla grupy, rzuca się go pod nogi dpsów. Warto też uderzyć bossa, aby identity podładować. Stagger [mid], Weak Point: 2
+                                        <ul>
+                                            <li>3: Tenacity - daje immunity na odepchnięcia, przewrócenia etc.</li>
+                                            <li>2: Brilliant Wave - Buff dla drużyny 15%AP</li>
+                                            <li>1: Wide-Angle Attack - Zwiększa zasięg skilla o 40%</li>
+                                            <li style="text-decoration: underline;">Skill wymagany</li>
+                                        </ul>
+                                    </span>
+                                    <img src="/Img/classes/runes/convinction.PNG" alt="" class="rune" title="Convinction">
+                                
+                            </div>
+                            <div class="skills">
+                                    <img src="/Img/classes/bard_skills/soundholic.PNG" alt="sound holic"> <span>Soundholic - Główny skill bijący u barda, robi stagger[mid], używa sięgo do ładowania identity
+                                        <ul>
+                                            <li>1: Sound Concentration - Zwiększa obrażenia z każdym uderzeniem</li>
+                                            <li>1: Sustain Enhancement - Zwiększa ilość hitów, co wpływa na ładowanie identity.</li>
+                                            <li>2: Focus Fire - Skraca czas trwania skilla, gdyż trwa on zbyt długo.</li>
+                                            <li>Jeśli grupa nie wymaga dużej ilości shieldów, warto ubrać tego skilla w celu szybszego załadowania identity</li>
+                                        </ul>
+                                    </span>
+                                    <img src="/Img/classes/runes/overwhelm.PNG" alt="" class="rune" title="Overwhelm">
+                                
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/rapsody.PNG" alt="rapsody"> <span>Rhapsody of Light - Shield dający redukcje damage, daje również push immunity.
+                                    <ul>
+                                        <li>2: Quick Prep - zmniejsza cd skilla</li>
+                                        <li>1: Stabilized Light - Daje push immunity</li>
+                                        <li>2: Shining Protection - Tripod dający redukcje damage dla drużyny i dla siebie.</li>
+                                        <li style="text-decoration: underline;">Skill wymagany</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/protection.PNG" alt="" class="rune" title="Protection">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/windofmusic.PNG" alt="wind of music"> <span>Wind of Music - Skill do ładowania identity, lub shieldowania drużyny.
+                                    <ul>
+                                        <li>2: Quick Prep - zmniejsza cd skilla</li>
+                                        <li>1: Melody Incrase - zwiększa ładowanie identity</li>
+                                        <li>1/2: Superspeed Cast - zwiększa cd skilla, ale można go użyć dwa razy, używa się do szybszego ładowania identity. Wind of Protection - daje shilda używa się gdy grupa wymaga większej ilości shildów</li>
+                                        <li style="text-decoration: underline;">Skill wymagany</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/wealth.PNG" alt="" class="rune" title="Wealth">
+                            </div>
+                            <div class="skills">
+                                
+                                    <img src="/Img/classes/bard_skills/heavenlytune.PNG" alt="heavenly tune">   <span>Heavenly Tune - Buff 15% dla drużyny, daje mana regen dla drużyny.
+                                        <ul>
+                                            <li>1: Quick Prep - zmniejsza cd skilla</li>
+                                            <li>1: Tough Tune - zwiększa atak speed</li>
+                                            <li>1: Intense Tune - daje buffa dla drużyny 15%AP</li>
+                                            <li style="text-decoration: underline;">Skill wymagany</li>
+                                        </ul>
+                                    </span>
+                                
+                                
+                                <img src="/Img/classes/runes/galewind.PNG" alt="" class="rune" title="Galewind">
+                                
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/harp.PNG" alt="harp"> <span>Harp of Rhythm - Zwieksza identity i nakłada debuff na bossa, taki sam jak sound shock.
+                                    <ul>
+                                        <li>1: Summoning Will - zwiększa czas trwania harfy</li>
+                                        <li>3: Melody Increase - zwiększa generowanie identity</li>
+                                        <li>1: Note Brand - Debuff, który nakłada się na bossa</li>
+                                        <li>Jeśli grupa nie wymaga dużej ilości shieldów, warto ubrać tego skilla w celu szybszego załadowania identity</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/bleed.PNG" alt="" class="rune" title="Bleed">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/rhythmbuckshot.PNG" alt="rhythm buckshot"> <span>Rhythm Buckshot - bardzo szybka kontra, weak point [1], stagger [low]
+                                    <ul>
+                                        <li>1: Melody Increase - zwiększa ładowanie identity</li>
+                                        <li>1/2: Wide-Angle Attack - zwiększa zasięg o 20%, Tenacity - daje push immunity</li>
+                                        <li>1: Agile Cast - zwiększa szybkość użycia</li>
+                                        <li>Przydatny skill na content typu valtan g2, gdzie warto mieć więcej niż jedną contre</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/quickrecharge.PNG" alt="" class="rune" title="Quick Recharge">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/guardiantune.PNG" alt="guardian tune"> <span>Guardian Tune - Daje damage redukcje i shilda
+                                    <ul>
+                                        <li>1: Tenacity - daje push immunity</li>
+                                        <li>1: Endless Protection - daje shilda po 8 sekundach od użycia</li>
+                                        <li>2: Wind of Protection - Daje ochrone przed jednym debufem</li>
+                                        <li>Nie wymagany skill, można go zastąpić w zalezności od potrzeb drużyny. Jeśli grupa wymaga więcej shieldów to można go założyć</li>
+                                    </ul>
+                                </span>
+                                
+                                    <img src="/Img/classes/runes/focus.PNG" alt="" class="rune" title="Focus">
+                                
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <div class="swifbard" id="swifbard">
+                            <div>
+                                <div class="skills">
+                                        <img src="/Img/classes/bard_skills/soundshock.PNG" alt="sound shock">   <span>Sound shock - skill nakładający na bossa debuff +10% zadawanych obrażeń dla grupy.
+                                            <ul>
+                                                <li>3: Maintained Explosion - aby dłużej utrzymać debufa</li>
+                                                <li>1: Sacred Shock - debuff</li>
+                                                <li>1: Rapid Fire - skill używa się podwójnie, używa się go do przedłużenia debuffa</li>
+                                                <li style="text-decoration: underline;">Skill wymagany</li>
+                                            </ul>
+                                        </span>
+                                    <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune" title="Judgment">
+                                    
+                                </div>
+                                <div class="skills">
+                                        <img src="/Img/classes/bard_skills/preludeofstorm.PNG" alt="prelude of storm"> <span>Prelude of Storm - Skill, który kontruje, jednak używa się go co cd do ładowania identity (z)
+                                            <ul>
+                                            <li>2: Quick Prep - skraca cd skilla</li>
+                                            <li>2: Melody Increase - Zwiększa ładowanie identity</li>
+                                            <li>1: Powerful Prelude - używa się do zwiększenia damage</li>
+                                            <li style="text-decoration: underline;">Skill wymagany</li>
+                                        </ul></span>
+                                        <img src="/Img/classes/runes/wealthepic.PNG" alt="" class="rune" title="Epic Wealth">
+                                    
+                                </div>
+                                <div class="skills">
+                                        <img src="/Img/classes/bard_skills/sonicvibration.PNG" alt="sonic vibration"> <span>Sonic Vibration - Buff 15% dla grupy, rzuca się go pod nogi dpsów. Warto też uderzyć bossa, aby identity podładować. Stagger [mid], Weak Point: 2
+                                            <ul>
+                                                <li>3: Tenacity - daje immunity na odepchnięcia, przewrócenia etc.</li>
+                                                <li>2: Brilliant Wave - Buff dla drużyny 15%AP</li>
+                                                <li>1: Wide-Angle Attack - Zwiększa zasięg skilla o 40%</li>
+                                                <li style="text-decoration: underline;">Skill wymagany</li>
+                                            </ul>
+                                        </span>
+                                        <img src="/Img/classes/runes/convinction.PNG" alt="" class="rune" title="Convinction">
+                                    
+                                </div>
+                                <div class="skills">
+                                        <img src="/Img/classes/bard_skills/soundholic.PNG" alt="sound holic"> <span>Soundholic - Główny skill bijący u barda, robi stagger[mid], używa sięgo do ładowania identity
+                                            <ul>
+                                                <li>1: Sound Concentration - Zwiększa obrażenia z każdym uderzeniem</li>
+                                                <li>1: Sustain Enhancement - Zwiększa ilość hitów, co wpływa na ładowanie identity.</li>
+                                                <li>2: Focus Fire - Skraca czas trwania skilla, gdyż trwa on zbyt długo.</li>
+                                                <li>Jeśli grupa nie wymaga dużej ilości shieldów, warto ubrać tego skilla w celu szybszego załadowania identity</li>
+                                            </ul>
+                                        </span>
+                                        <img src="/Img/classes/runes/overwhelm.PNG" alt="" class="rune" title="Overwhelm">
+                                    
+                                </div>
+                                <div class="skills">
+                                    <img src="/Img/classes/bard_skills/rapsody.PNG" alt="rapsody"> <span>Rhapsody of Light - Shield dający redukcje damage, daje również push immunity.
+                                        <ul>
+                                            <li>2: Quick Prep - zmniejsza cd skilla</li>
+                                            <li>1: Stabilized Light - Daje push immunity</li>
+                                            <li>2: Shining Protection - Tripod dający redukcje damage dla drużyny i dla siebie.</li>
+                                            <li style="text-decoration: underline;">Skill wymagany</li>
+                                        </ul>
+                                    </span>
+                                    <img src="/Img/classes/runes/protection.PNG" alt="" class="rune" title="Protection">
+                                </div>
+                                <div class="skills">
+                                    <img src="/Img/classes/bard_skills/windofmusic.PNG" alt="wind of music"> <span>Wind of Music - Skill do ładowania identity, lub shieldowania drużyny.
+                                        <ul>
+                                            <li>2: Quick Prep - zmniejsza cd skilla</li>
+                                            <li>1: Melody Incrase - zwiększa ładowanie identity</li>
+                                            <li>1/2: Superspeed Cast - zwiększa cd skilla, ale można go użyć dwa razy, używa się do szybszego ładowania identity. Wind of Protection - daje shilda używa się gdy grupa wymaga większej ilości shildów</li>
+                                            <li style="text-decoration: underline;">Skill wymagany</li>
+                                        </ul>
+                                    </span>
+                                    <img src="/Img/classes/runes/wealth.PNG" alt="" class="rune" title="Wealth">
+                                </div>
+                                <div class="skills">
+                                    
+                                        <img src="/Img/classes/bard_skills/heavenlytune.PNG" alt="heavenly tune">   <span>Heavenly Tune - Buff 15% dla drużyny, daje mana regen dla drużyny.
+                                            <ul>
+                                                <li>1: Quick Prep - zmniejsza cd skilla</li>
+                                                <li>1: Tough Tune - zwiększa atak speed</li>
+                                                <li>1: Intense Tune - daje buffa dla drużyny 15%AP</li>
+                                                <li style="text-decoration: underline;">Skill wymagany</li>
+                                            </ul>
+                                        </span>
+                                    
+                                    
+                                    <img src="/Img/classes/runes/galewind.PNG" alt="" class="rune" title="Galewind">
+                                    
+                                </div>
+                                <div class="skills">
+                                    <img src="/Img/classes/bard_skills/harp.PNG" alt="harp"> <span>Harp of Rhythm - Zwieksza identity i nakłada debuff na bossa, taki sam jak sound shock.
+                                        <ul>
+                                            <li>1: Summoning Will - zwiększa czas trwania harfy</li>
+                                            <li>3: Melody Increase - zwiększa generowanie identity</li>
+                                            <li>1: Note Brand - Debuff, który nakłada się na bossa</li>
+                                            <li>Jeśli grupa nie wymaga dużej ilości shieldów, warto ubrać tego skilla w celu szybszego załadowania identity</li>
+                                        </ul>
+                                    </span>
+                                    <img src="/Img/classes/runes/bleed.PNG" alt="" class="rune" title="Bleed">
+                                </div>
+                                <div class="skills">
+                                    <img src="/Img/classes/bard_skills/rhythmbuckshot.PNG" alt="rhythm buckshot"> <span>Rhythm Buckshot - bardzo szybka kontra, weak point [1], stagger [low]
+                                        <ul>
+                                            <li>1: Melody Increase - zwiększa ładowanie identity</li>
+                                            <li>1/2: Wide-Angle Attack - zwiększa zasięg o 20%, Tenacity - daje push immunity</li>
+                                            <li>1: Agile Cast - zwiększa szybkość użycia</li>
+                                            <li>Przydatny skill na content typu valtan g2, gdzie warto mieć więcej niż jedną contre</li>
+                                        </ul>
+                                    </span>
+                                    <img src="/Img/classes/runes/quickrecharge.PNG" alt="" class="rune" title="Quick Recharge">
+                                </div>
+                                <div class="skills">
+                                    <img src="/Img/classes/bard_skills/guardiantune.PNG" alt="guardian tune"> <span>Guardian Tune - Daje damage redukcje i shilda
+                                        <ul>
+                                            <li>1: Tenacity - daje push immunity</li>
+                                            <li>1: Endless Protection - daje shilda po 8 sekundach od użycia</li>
+                                            <li>2: Wind of Protection - Daje ochrone przed jednym debufem</li>
+                                            <li style="text-decoration: underline;">Skill wymagany</li>
+                                        </ul>
+                                    </span>
+                                    
+                                        <img src="/Img/classes/runes/focus.PNG" alt="" class="rune" title="Focus">
+                                    
+                                </div>
+                            </div>
+                           
+                        
+                    </div>
+
+                    <div class="dpsbard" id="dpsbard">
+                        <div>
+                            <div class="skills">
+                                    <img src="/Img/classes/bard_skills/soundshock.PNG" alt="sound shock">   <span>Sound shock - skill nakładający na bossa debuff +10% zadawanych obrażeń dla grupy.
+                                        <ul>
+                                            <li>3: Maintained Explosion - aby dłużej utrzymać debufa</li>
+                                            <li>1: Sacred Shock - debuff</li>
+                                            <li>1: Rapid Fire - skill używa się podwójnie, używa się go do przedłużenia debuffa</li>
+                                            <li style="text-decoration: underline;">Skill wymagany</li>
+                                        </ul>
+                                    </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune" title="Judgment">
+                                
+                            </div>
+                            <div class="skills">
+                                    <img src="/Img/classes/bard_skills/preludeofstorm.PNG" alt="prelude of storm"> <span>Prelude of Storm - Skill, który kontruje, jednak używa się go co cd do ładowania identity (z)
+                                        <ul>
+                                        <li>2: Quick Prep - skraca cd skilla</li>
+                                        <li>3: Lightning Enhancement - Zwiększa damage skilla</li>
+                                        <li>1: Powerful Prelude - Zwiększa damage skilla</li>
+                                        <li style="text-decoration: underline;">Skill wymagany</li>
+                                    </ul></span>
+                                    <img src="/Img/classes/runes/wealthepic.PNG" alt="" class="rune" title="Epic Wealth">
+                                
+                            </div>
+                            <div class="skills">
+                                    <img src="/Img/classes/bard_skills/sonicvibration.PNG" alt="sonic vibration"> <span>Sonic Vibration - Buff 15% dla grupy, rzuca się go pod nogi dpsów. Warto też uderzyć bossa, aby identity podładować. Stagger [mid], Weak Point: 2
+                                        <ul>
+                                            <li>3: Tenacity - daje immunity na odepchnięcia, przewrócenia etc.</li>
+                                            <li>3: Chain Vibration - Zwiększa obrażenia skilla</li>
+                                            <li>2: Spreading Vibration - Skill przy uderzeniu w ziemie wybucha i tworzy "fale" zadającą obrażenia</li>
+                                            <li style="text-decoration: underline;">Skill wymagany</li>
+                                        </ul>
+                                    </span>
+                                    <img src="/Img/classes/runes/convinction.PNG" alt="" class="rune" title="Convinction">
+                                
+                            </div>
+                            <div class="skills">
+                                    <img src="/Img/classes/bard_skills/soundholic.PNG" alt="sound holic"> <span>Soundholic - Główny skill bijący u barda, robi stagger[mid], używa sięgo do ładowania identity
+                                        <ul>
+                                            <li>1: Sound Concentration - Zwiększa obrażenia z każdym uderzeniem</li>
+                                            <li>1: Sustain Enhancement - Zwiększa ilość hitów, co wpływa na ładowanie identity.</li>
+                                            <li>2: Focus Fire - Skraca czas trwania skilla, gdyż trwa on zbyt długo.</li>
+                                            <li>Jeśli grupa nie wymaga dużej ilości shieldów, warto ubrać tego skilla w celu szybszego załadowania identity</li>
+                                        </ul>
+                                    </span>
+                                    <img src="/Img/classes/runes/overwhelm.PNG" alt="" class="rune" title="Overwhelm">
+                                
+                            </div>
+                            <div class="skills">
+                                
+                                    <img src="/Img/classes/bard_skills/heavenlytune.PNG" alt="heavenly tune">   <span>Heavenly Tune - Buff 15% dla drużyny, daje mana regen dla drużyny.
+                                        <ul>
+                                            <li>1: Quick Prep - zmniejsza cd skilla</li>
+                                            <li>1: Tough Tune - zwiększa atak speed</li>
+                                            <li>2: Tune for Me - zwiększa damage skilla i efektywność mana regen o 100%</li>
+                                            <li style="text-decoration: underline;">Skill wymagany</li>
+                                        </ul>
+                                    </span>
+                                
+                                
+                                <img src="/Img/classes/runes/focus.PNG" alt="" class="rune" title="Focus">
+                                
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/harp.PNG" alt="harp"> <span>Harp of Rhythm - Zwieksza identity i nakłada debuff na bossa, taki sam jak sound shock.
+                                    <ul>
+                                        <li>1: Summoning Will - zwiększa czas trwania harfy</li>
+                                        <li>1: Agile Rapid Fire - Zwiększa szybkość ataku harfy</li>
+                                        <li>2: Giant Harp - Zwiększa obrażenia harfy</li>
+                                        <li style="text-decoration: underline;">Skill wymagany</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/bleed.PNG" alt="" class="rune" title="Bleed">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/notebundle.PNG" alt="Note Bundle"> <span>Note Bundle skill zmniejszający damage i move speed przeciwnika. Zadaje obrażenia bijąc co 2sekundy przez 8 sekund.
+                                    <ul>
+                                        <li>2: Repeat Sign - Zmienia skilla na stakowalnego max. 2 ładunki</li>
+                                        <li>3: Crescendo - Zwiększa damage skilla</li>
+                                        <li>2: Melody Brand - Zmienia attak skilla, leci on z góry na cel oraz zwiększa zasięg i ilość uderzeń</li>
+                                        <li style="text-decoration: underline;">Skill wymagany</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/quickrecharge.PNG" alt="" class="rune" title="Quick Recharge">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/stigma.PNG" alt="Stigma"> <span>Stigma skill zadający obrażenia co 0,7s przez 4s. Robi stagger[mid]
+                                    <ul>
+                                        <li>1: Wide-Angle Attack - zwiększa zasięg skilla</li>
+                                        <li>3: Storm Stigma - Skill porusza się w stronę przeciwnika</li>
+                                        <li>1: Pain Brand - Zwiększa obrażenia skilla</li>
+                                        <li style="text-decoration: underline;">Skill wymagany</li>
+                                    </ul>
+                                </span>
+                                
+                                    <img src="/Img/classes/runes/galewind.PNG" alt="" class="rune" title="Galewind">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right"><h2 class="logo"><span class="logo-color"> Eng</span>raving</h2>
+                    <div class="specbard_right" id="specbard_right">
+                        <div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/desperatesalvation.PNG" alt=""> <span>Desperate Salvation
+                                    <ul>
+                                        <li>Ostatni tik heala leczy dodatkowe 24% HP.</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/awakening.PNG" alt=""> <span>Awakening
+                                    <ul>
+                                        <li>Skraca cd awakeninga o 50% i zwiększa ilość użyć o 3</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/expert.PNG" alt=""> <span>Expert
+                                    <ul>
+                                        <li>Zwiększa heale i shieldy o 24%, jeśli cel ma mniej niż 50% hp zwiększa efekt heali i shieldów o dodatkowe 12%</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/magicstream.PNG" alt=""> <span>Magick Stream
+                                    <ul>
+                                        <li>Zalecane jeśli nie masz problemów z dodgowaniem damage, zwiększa mana regen o 15% i skraca cd skilli o 10%</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/dropofethers.PNG" alt=""> <span>Drop of Ether
+                                    <ul>
+                                        <li>Co 10s respi kulke, która daje buffy drużynie:</li>
+                                        <li>MP orb: Przywraca 10% many</li>
+                                        <li>Flash orb: +15% crit rate</li>
+                                        <li>Strengh orb: +10% Attack Powera</li>
+                                        <li>Defense orb: +10% defense</li>
+                                        <li>Wind orb: +10% movment speed</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/vitalhitpoint.PNG" alt=""> <span>Vital Point Hit
+                                    <ul>
+                                        <li>Zwiększa efektywność staggera o 36%</li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="swifbard_right" id="swifbard_right">
+                        <div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/desperatesalvation.PNG" alt=""> <span>Desperate Salvation
+                                    <ul>
+                                        <li>Ostatni tik heala leczy dodatkowe 24% HP.</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/awakening.PNG" alt=""> <span>Awakening
+                                    <ul>
+                                        <li>Skraca cd awakeninga o 50% i zwiększa ilość użyć o 3</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/expert.PNG" alt=""> <span>Expert
+                                    <ul>
+                                        <li>Zwiększa heale i shieldy o 24%, jeśli cel ma mniej niż 50% hp zwiększa efekt heali i shieldów o dodatkowe 12%</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/magicstream.PNG" alt=""> <span>Magick Stream
+                                    <ul>
+                                        <li>Zalecane jeśli nie masz problemów z dodgowaniem damage, zwiększa mana regen o 15% i skraca cd skilli o 10%</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/dropofethers.PNG" alt=""> <span>Drop of Ether
+                                    <ul>
+                                        <li>Co 10s respi kulke, która daje buffy drużynie:</li>
+                                        <li>MP orb: Przywraca 10% many</li>
+                                        <li>Flash orb: +15% crit rate</li>
+                                        <li>Strengh orb: +10% Attack Powera</li>
+                                        <li>Defense orb: +10% defense</li>
+                                        <li>Wind orb: +10% movment speed</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/vitalhitpoint.PNG" alt=""> <span>Vital Point Hit
+                                    <ul>
+                                        <li>Zwiększa efektywność staggera o 36%</li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="dpsbard_right" id="dpsbard_right">
+                        <div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/truecourage.PNG" alt=""> <span>True Courage 
+                                    <ul>
+                                        <li>Podczas trwania Serenade of Courage zwiększa obrażenia o 20% i crit rate o 15%</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/kbw.PNG" alt=""> <span>Keen Blunt Weapon
+                                    <ul>
+                                        <li>Zwiększa crit damage o 50%, ale jest 10% szans na zadanie -20% obrażeń</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/adrenalina.PNG" alt=""> <span>Adrenaline
+                                    <ul>
+                                        <li>Po użyciu skilla zwiększa atak power o 1%, efekt stakuje się 6 razy. Kiedy jest maksymalna ilość staków crit rate jest zwiększony o 15%</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/cursedoll.PNG" alt=""> <span>Cursed Doll
+                                    <ul>
+                                        <li>Atak power zwiększony o 16%, ale zmniejsza efekty leczące o 25%.</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/grudge.PNG" alt=""> <span>Grudge
+                                    <ul>
+                                        <li>Zwiększa obrażenia o 20%, oraz zwiększa otrzymywane obrażenia o 20%.</li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="footer-card">
+                    <div class="specbard_footer" id="specbard_footer">
+                        <div class="text_classes_footer">
+                            <p>Statystyki:</p><p> 70% Specjalizacja, 30% Swiftness</p>
+                            <p>Set: Yearning</p>
+                        </div>
+                        
+                    </div>
+    
+                    <div class="swifbard_footer" id="swifbard_footer">
+                        <div class="text_classes_footer">
+                            <p>Statystyki:</p><p> 70% Swiftness, 30% Specjalizacja</p>
+                            <p>Set: Yearning</p>
+                        </div>
+                    </div>
+    
+                    <div class="dpsbard_footer" id="dpsbard_footer">
+                        <div class="text_classes_footer">
+                            <p>Statystyki:</p><p> 70% Crit, 30% Swiftness</p>
+                            <p>Set: Betrayal</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            
+            <div class="classes-card" id="class-Paladin">
+                <div class="header-card">
+                    <h2 class="logo"> Sety dla <span class="logo-color"> Paladyna:</span></h2>
+                </div>
+
+                <div class="left">
+                    <div class="buttons">
+                        <button type="button" name="spec_paladin" id="toggle-paladin-spec" onclick="paladin_spec()">Specjalizacja</button>
+                        <button type="button" name="swif_paladin" id="toggle-paladin-swif" onclick="paladin_swif()">Swiftness</button>  
+                        <button type="button" name="dps_paladin" id="toggle-paladin-dps" onclick="paladin_dps()">DPS</button>  
+                    </div> 
+                    <div class="specpaladin" id="specpaladin">
+                        <div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/soundshock.PNG" alt="sound shock"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/preludeofstorm.PNG" alt="prelude of storm"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                    <li>tripod 1</li>
+                                    <li>tripod 2</li>
+                                    <li>tripod 3</li>
+                                </ul></span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/sonicvibration.PNG" alt="sonic vibration"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/soundholic.PNG" alt="sound holic"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/rapsody.PNG" alt="rapsody"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/windofmusic.PNG" alt="wind of music"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/heavenlytune.PNG" alt="heavenly tune"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/harp.PNG" alt="harp"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/rhythmbuckshot.PNG" alt="rhythm buckshot"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/guardiantune.PNG" alt="guardian tune"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swifpaladin" id="swifpaladin">
+                        <div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/soundshock.PNG" alt="sound shock"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/preludeofstorm.PNG" alt="prelude of storm"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                    <li>tripod 1</li>
+                                    <li>tripod 2</li>
+                                    <li>tripod 3</li>
+                                </ul></span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/sonicvibration.PNG" alt="sonic vibration"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/soundholic.PNG" alt="sound holic"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/rapsody.PNG" alt="rapsody"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/windofmusic.PNG" alt="wind of music"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/heavenlytune.PNG" alt="heavenly tune"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/harp.PNG" alt="harp"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/rhythmbuckshot.PNG" alt="rhythm buckshot"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/guardiantune.PNG" alt="guardian tune"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dpspaladin" id="dpspaladin">
+                        <div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/soundshock.PNG" alt="sound shock"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/preludeofstorm.PNG" alt="prelude of storm"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                    <li>tripod 1</li>
+                                    <li>tripod 2</li>
+                                    <li>tripod 3</li>
+                                </ul></span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/sonicvibration.PNG" alt="sonic vibration"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/soundholic.PNG" alt="sound holic"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/rapsody.PNG" alt="rapsody"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/windofmusic.PNG" alt="wind of music"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/heavenlytune.PNG" alt="heavenly tune"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/harp.PNG" alt="harp"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/rhythmbuckshot.PNG" alt="rhythm buckshot"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                            <div class="skills">
+                                <img src="/Img/classes/bard_skills/guardiantune.PNG" alt="guardian tune"> <span>Lorem ipsum dolor sit amet.
+                                    <ul>
+                                        <li>tripod 1</li>
+                                        <li>tripod 2</li>
+                                        <li>tripod 3</li>
+                                    </ul>
+                                </span>
+                                <img src="/Img/classes/runes/judgment.PNG" alt="" class="rune">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right"><h2 class="logo"><span class="logo-color"> Eng</span>raving</h2>
+                    <div class="specpaladin_right" id="specpaladin_right">
+                       
+                        <div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/desperatesalvation.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/awakening.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/expert.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/magicstream.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/dropofethers.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/vitalhitpoint.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="swifpaladin_right" id="swifpaladin_right">
+                        <div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/desperatesalvation.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/awakening.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/expert.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/magicstream.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/dropofethers.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/vitalhitpoint.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                        </div>
+                       
+                    </div>
+    
+                    <div class="dpspaladin_right" id="dpspaladin_right">
+                        <div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/truecourage.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/kbw.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/adrenalina.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/cursedoll.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                            <div class="engravings">
+                                <img src="/Img/classes/engraving/grudge.PNG" alt=""> <span>Lorem ipsum dolor sit amet.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="footer-card">
+                    <div class="specpaladin_footer" id="specpaladin_footer">
+                        <div class="text_classes_footer">
+                            <p>Statystyki: 70% Specjalizacja, 30% Swiftness</p>
+                            <p>Set: Yearning</p>
+                        </div>
+                        
+                    </div>
+    
+                    <div class="swifpaladin_footer" id="swifpaladin_footer">
+                        <div class="text_classes_footer">
+                            <p>Statystyki: 70% Swiftness, 30% Specjalizacja</p>
+                            <p>Set: Yearning</p>
+                        </div>
+                    </div>
+    
+                    <div class="dpspaladin_footer" id="dpspaladin_footer">
+                        <div class="text_classes_footer">
+                            <p>Statystyki: 70% Crit, 30% Swiftness</p>
+                            <p>Set: Betrayal</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            
+        </div>
+    </main>
+       
+</div>
+<footer>
+    <div class="footer">
+        <div class="contact">
+            <p>Copyright&copy; 2022</p>
+            <p> <i class="bi bi-twitter"></i>/Krescencja</p>
+            <p> <i class="bi bi-twitch"></i>/Krescencja</p>
+            <p><i class="bi bi-discord"></i> Krescencja#1256</p>
+            
+        </div>
+    </div>
+    </footer>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+      
+</body>
+</html>

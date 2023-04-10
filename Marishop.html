@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+    <title>Calc Ark</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/Css/style.css">
+</head>
+<body>
+    <div class="container">
+    <header>
+        <h3>Calc Ark</h3>
+        <div class="nav_bar">
+            <a href="index.html">Strona główna</a>
+            
+            <div class="dropdown_calc">
+                <button class="dropbtn_calc active" id="dropbtn_calc">
+                    Arkusze kalkulacyjne<i class="bi bi-caret-down-fill"></i>
+                </button>
+                <div class="dropdown_calc-content">
+                    <a href="Engraving.html">Kalkulator Engravingów</a>
+                    <a href="Marishop.html" class="active">Kalkulator Cen w Mari Shopie</a>
+                    <a href="dmg_buff.html">Kalkulator Dmg buff</a>
+                    <a href="heals.html">Kalkulator Leczenia</a>
+                    <a href="cd.html">Kalkulator Czasów Odnowienia</a>
+                </div>
+            </div>
+
+            <div class="dropdown_calc">
+                <button class="dropbtn_calc" id="dropbtn_calc">
+                    Poradniki do klas<i class="bi bi-caret-down-fill"></i>
+                </button>
+                <div class="dropdown_calc-content">
+                    <a href="bard_guide.html">Bard</a>
+                    <a href="paladyn_guide.html">Paladyn</a>
+                </div>
+            </div>
+
+            <a href="Valtan_inferno.html">Valtan Inferno</a>
+
+        </div> <hr>
+    </header>
+   
+<div class="main-page-mari">
+<main>
+    <div class="text-mari">
+        Wypełnij zielone pola!
+    </div>
+    <div class="crystal-mari">
+        <table class="table-mari-crystal">
+            <thead><tr><td>Cena kryształków:</td>
+                <td>
+                <input type="text" name="CrystalPrice" id="crystalPrice"    class="inputactive-mari">
+            </td></tr></tbody>
+        </table>
+    </div>
+<table class="table-mari">
+    <thead>
+        <tr>
+            
+            <td>Nazwa Itemu</td>
+            <td>Cena Mari</td>
+            <td>Ilość w Mari</td>
+            <td>Cena AH za szt.</td>
+            <td>Ilość wym. kryształków</td>
+            <td>Cena wym. kryształków</td>
+            <td>Cena AH za ilość z Mari</td>
+            <td>Różnica</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            
+            <td>Solar Grace</td>
+            <td>160</td>
+            <td>40</td>
+            <td>
+                <input type="text" name="Mariprice1" id="Mariprice1" class="inputactive-mari">
+            </td>
+            <td>
+                <input type="text" name="amountCrystal" id="amountCrystal" disabled>
+            </td>
+            <td>
+                <input type="text" name="amountCrystaltoGold" id="amountCrystaltoGold" disabled>
+            </td>
+            <td>
+                <input type="text" name="amountItemtoGold" id="amountItemtoGold" disabled>
+            </td>
+            <td>
+                <input type="text" name="diff" id="diff" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>reger</td>
+            <td>rgregh</td>
+        </tr>
+    </tbody>
+</table>
+    
+
+    
+    
+
+</main>
+
+<footer>
+    <div class="footer">
+        Copyright&copy; 2022 Krescencja
+    </div>
+</footer>
+</div>
+
+<script>
+
+
+</script>
+</body>
+</html>
